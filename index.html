@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Suresh Pedapudi is a data and machine learning engineer building reliable data platforms, predictive models, and analytics systems." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Suresh Pedapudi — Data &amp; Machine Learning Engineer</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #f3f4f0;
+      --surface: #ffffff;
+      --ink: #151916;
+      --muted: #565f58;
+      --line: #cdd2cb;
+      --soft: #e5e8e2;
+      --accent: #d94b2b;
+      --accent-ink: #ffffff;
+      --green: #1f5c43;
+      --shadow: 0 24px 64px rgba(16, 24, 18, .09);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #101310;
+        --surface: #171b18;
+        --ink: #f0f2ec;
+        --muted: #aeb7ae;
+        --line: #343a35;
+        --soft: #222824;
+        --accent: #ff7656;
+        --accent-ink: #18100e;
+        --green: #8ac9a7;
+        --shadow: 0 24px 64px rgba(0, 0, 0, .25);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    svg { display: block; }
+    .shell {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 28px 0 72px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      min-height: 44px;
+      margin-bottom: 54px;
+    }
+    .topbar a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 12px;
+    }
+    .topbar a:hover, .topbar a:focus-visible { color: var(--accent); }
+    .resume-mini {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      gap: 72px;
+      align-items: end;
+      padding-bottom: 78px;
+      border-bottom: 1px solid var(--line);
+    }
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      letter-spacing: .02em;
+      color: var(--green);
+    }
+    h1 {
+      margin: 17px 0 22px;
+      font-size: clamp(52px, 8.3vw, 106px);
+      line-height: .91;
+      letter-spacing: -.075em;
+      font-weight: 700;
+      max-width: 830px;
+    }
+    h1 span { display: block; color: var(--accent); }
+    .intro {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(18px, 2.1vw, 24px);
+      line-height: 1.45;
+      color: var(--muted);
+      letter-spacing: -.02em;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 11px 16px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: border-color .18s ease, color .18s ease, background .18s ease;
+    }
+    .button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .button:hover, .button:focus-visible { border-color: var(--accent); color: var(--accent); }
+    .button.primary:hover, .button.primary:focus-visible { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .button svg { width: 17px; height: 17px; }
+    .system-map {
+      position: relative;
+      min-height: 360px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .map-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; }
+    .live { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 12px; }
+    .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .pipeline { display: grid; gap: 18px; }
+    .pipe-row { display: grid; grid-template-columns: 36px 1fr auto; gap: 12px; align-items: center; }
+    .node {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 50%;
+      font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--accent);
+      background: var(--paper);
+    }
+    .pipe-label strong { display: block; font-size: 14px; line-height: 1.2; }
+    .pipe-label span { display: block; color: var(--muted); font-size: 11px; margin-top: 3px; }
+    .pipe-state { font-family: "IBM Plex Mono", monospace; color: var(--green); font-size: 10px; }
+    .connector { width: 1px; height: 14px; background: var(--line); margin: -11px 0 -11px 17px; }
+    .map-foot { position: absolute; inset: auto 28px 25px; display: flex; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--line); font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--muted); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+    .metric { padding: 35px 28px 33px 0; }
+    .metric + .metric { border-left: 1px solid var(--line); padding-left: 28px; }
+    .metric strong { display: block; font-size: clamp(27px, 3.4vw, 43px); letter-spacing: -.05em; line-height: 1; margin-bottom: 10px; }
+    .metric span { color: var(--muted); font-size: 13px; }
+    section { padding: 92px 0; border-bottom: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 72px; }
+    .section-title { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; color: var(--green); }
+    h2 { margin: 0 0 44px; font-size: clamp(31px, 4vw, 48px); line-height: 1.08; letter-spacing: -.045em; max-width: 720px; }
+    .timeline { border-top: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 170px 1fr; gap: 26px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+    .role:last-child { border-bottom: 0; }
+    .role-date { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); padding-top: 5px; }
+    .role h3 { margin: 0 0 4px; font-size: 23px; letter-spacing: -.03em; }
+    .company { color: var(--accent); font-weight: 600; margin-bottom: 17px; }
+    .role p { margin: 0; color: var(--muted); max-width: 760px; }
+    .outcomes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .outcomes span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 3px; font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--ink); }
+    .practice-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .practice { min-height: 260px; padding: 28px; background: var(--surface); }
+    .practice-num { font-family: "IBM Plex Mono", monospace; color: var(--accent); font-size: 12px; }
+    .practice h3 { margin: 55px 0 12px; font-size: 21px; letter-spacing: -.025em; }
+    .practice p { margin: 0; font-size: 14px; color: var(--muted); }
+    .stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 38px 54px; }
+    .stack-group { border-top: 1px solid var(--line); padding-top: 18px; }
+    .stack-group h3 { margin: 0 0 13px; font-size: 14px; }
+    .stack-group p { margin: 0; color: var(--muted); font-size: 14px; }
+    .projects { display: grid; gap: 16px; }
+    .project { display: grid; grid-template-columns: 1fr 1fr; min-height: 250px; border: 1px solid var(--line); background: var(--surface); }
+    .project-copy { padding: 32px; }
+    .project h3 { margin: 6px 0 16px; font-size: 25px; line-height: 1.2; letter-spacing: -.035em; }
+    .project p { margin: 0; color: var(--muted); font-size: 14px; }
+    .project-side { padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; background: var(--soft); }
+    .techline { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--green); }
+    .project-side strong { margin-top: 12px; font-size: 18px; line-height: 1.35; }
+    .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+    .credentials h3 { margin: 0 0 23px; font-size: 18px; }
+    .credential-list { display: grid; }
+    .credential { padding: 18px 0; border-top: 1px solid var(--line); }
+    .credential strong { display: block; line-height: 1.35; }
+    .credential span { color: var(--muted); font-size: 13px; }
+    .closing { padding: 92px 0 36px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    .closing h2 { margin-bottom: 18px; max-width: 800px; }
+    .closing p { color: var(--muted); margin: 0; }
+    .contact { text-align: right; }
+    .contact a { display: inline-block; color: var(--accent); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 5px; overflow-wrap: anywhere; }
+    footer { display: flex; justify-content: space-between; gap: 24px; padding-top: 38px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
+    footer a { text-underline-offset: 4px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (max-width: 860px) {
+      .shell { width: min(100% - 32px, 720px); padding-top: 18px; }
+      .topbar { margin-bottom: 35px; overflow: hidden; }
+      .topbar a:not(.resume-mini) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 48px; padding-bottom: 56px; }
+      h1 { font-size: clamp(54px, 15vw, 92px); }
+      .system-map { min-height: 345px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .metric:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .metric:nth-child(4) { border-top: 1px solid var(--line); }
+      section { padding: 68px 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 28px; }
+      h2 { margin-bottom: 32px; }
+      .practice-grid { grid-template-columns: 1fr; }
+      .practice { min-height: 210px; }
+      .practice h3 { margin-top: 35px; }
+      .project { grid-template-columns: 1fr; }
+      .project-side { min-height: 180px; }
+      .closing { grid-template-columns: 1fr; }
+      .contact { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 24px, 520px); }
+      .topbar { justify-content: flex-start; }
+      h1 { letter-spacing: -.065em; }
+      .intro { font-size: 18px; }
+      .actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .button.primary { grid-column: 1 / -1; }
+      .button { justify-content: center; }
+      .metrics { grid-template-columns: 1fr; }
+      .metric, .metric + .metric { padding: 25px 0; border-left: 0; border-top: 1px solid var(--line); }
+      .metric:first-child { border-top: 0; }
+      .role { grid-template-columns: 1fr; gap: 10px; }
+      .stack, .credentials { grid-template-columns: 1fr; }
+      .project-copy, .project-side { padding: 25px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="topbar" aria-label="Primary navigation">
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a class="resume-mini" href="resume.pdf" download="Suresh-Pedapudi-Resume.pdf" download>Download résumé</a>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="mono">Data &amp; machine learning engineer</div>
+        <h1>Suresh <span>Pedapudi.</span></h1>
+        <p class="intro">I build dependable data platforms and machine learning systems that turn complex, high-volume data into fast, trusted decisions.</p>
+        <div class="actions">
+          <a class="button primary" href="https://www.linkedin.com/in/sureshpedapudi?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 11v7M8 8v.01M12 18v-4a3 3 0 0 1 6 0v4M5 5h14v14H5z"/></svg>
+            LinkedIn
+          </a>
+          <a class="button" href="https://github.com/pedapudisuresh" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4 1.5-4-2-5-2.5M14 22v-3.5c0-1 .1-1.4-.5-2 3 0 6-.5 6-6a4.7 4.7 0 0 0-1.3-3.3A4.4 4.4 0 0 0 18.1 4S17 3.7 14.5 5a12 12 0 0 0-6 0C6 3.7 4.9 4 4.9 4a4.4 4.4 0 0 0-.1 3.2A4.7 4.7 0 0 0 3.5 10.5c0 5.5 3 6 6 6-.5.5-.6 1-.5 2V22"/></svg>
+            GitHub
+          </a>
+          <a class="button" href="resume.pdf" download="Suresh-Pedapudi-Resume.pdf" download>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
+            Résumé
+          </a>
+        </div>
+      </div>
+
+      <aside class="system-map" aria-label="Data pipeline illustration">
+        <div class="map-head"><span class="mono">SYSTEM_01</span><span class="live">operational</span></div>
+        <div class="pipeline">
+          <div class="pipe-row"><div class="node">01</div><div class="pipe-label"><strong>Ingest</strong><span>event-driven sources</span></div><span class="pipe-state">READY</span></div>
+          <div class="connector"></div>
+          <div class="pipe-row"><div class="node">02</div><div class="pipe-label"><strong>Transform</strong><span>tested data models</span></div><span class="pipe-state">PASS</span></div>
+          <div class="connector"></div>
+          <div class="pipe-row"><div class="node">03</div><div class="pipe-label"><strong>Serve</strong><span>analytics &amp; decisions</span></div><span class="pipe-state">LIVE</span></div>
+        </div>
+        <div class="map-foot"><span>reliability by design</span><span>→</span></div>
+      </aside>
+    </header>
+
+    <div class="metrics" aria-label="Career highlights">
+      <div class="metric"><strong>4 yrs</strong><span>Data engineering experience</span></div>
+      <div class="metric"><strong>40%</strong><span>Lower data latency</span></div>
+      <div class="metric"><strong>50+</strong><span>Sources unified</span></div>
+      <div class="metric"><strong>100+</strong><span>Stakeholders supported</span></div>
+    </div>
+
+    <section id="experience">
+      <div class="section-grid">
+        <h2 class="section-title">01 / Experience</h2>
+        <div>
+          <h2>Production systems built for scale, clarity, and trust.</h2>
+          <div class="timeline">
+            <article class="role">
+              <div class="role-date">Jan 2025 — present</div>
+              <div>
+                <h3>Data Engineer</h3>
+                <div class="company">TecHands · Part-time</div>
+                <p>Building a multi-tenant analytics platform for operational infrastructure data. Designed dimensional models across OLAP and OLTP workloads, automated event-driven ingestion on AWS, and integrated data profiling and test coverage into CI/CD.</p>
+                <div class="outcomes"><span>40% lower latency</span><span>100% data integrity</span><span>AWS · Snowflake · BigQuery</span></div>
+              </div>
+            </article>
+            <article class="role">
+              <div class="role-date">Sep 2021 — Jul 2024</div>
+              <div>
+                <h3>Digital Specialist Engineer</h3>
+                <div class="company">Infosys · Airbus, France</div>
+                <p>Engineered export-control data readiness systems in Palantir Skywise. Built PySpark and SQL pipelines, unified disparate sources into an ontology layer, created workflow applications, and translated cross-functional requirements into scalable solution designs.</p>
+                <div class="outcomes"><span>30% faster processing</span><span>50+ sources</span><span>15+ solution designs</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-grid">
+        <h2 class="section-title">02 / Approach</h2>
+        <div>
+          <h2>Engineering from reliable data to useful intelligence.</h2>
+          <div class="practice-grid">
+            <article class="practice"><span class="practice-num">01</span><h3>Model for the decision</h3><p>Start with the business question, then shape dimensions, entities, and interfaces around how the data will actually be used.</p></article>
+            <article class="practice"><span class="practice-num">02</span><h3>Build reliability in</h3><p>Make quality observable through automated tests, profiling, SLOs, and root-cause analysis—not an afterthought at the end.</p></article>
+            <article class="practice"><span class="practice-num">03</span><h3>Train for outcomes</h3><p>Turn high-dimensional inputs into useful features, compare models rigorously, and optimize predictive performance for the problem at hand.</p></article>
+            <article class="practice"><span class="practice-num">04</span><h3>Ship with the team</h3><p>Turn stakeholder requirements into clear solution designs, maintainable systems, and documentation others can build on.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-grid">
+        <h2 class="section-title">03 / Toolkit</h2>
+        <div>
+          <h2>A modern stack across data, machine learning, cloud, and delivery.</h2>
+          <div class="stack">
+            <div class="stack-group"><h3>Data engineering</h3><p>Python · PySpark · SQL · Spark · Kafka · Hadoop · Airflow · dbt · ETL/ELT</p></div>
+            <div class="stack-group"><h3>Machine learning</h3><p>Predictive modeling · Classification · Feature engineering · PCA · NLP · LLMs · R</p></div>
+            <div class="stack-group"><h3>Cloud, platforms &amp; analytics</h3><p>AWS · GCP · Snowflake · BigQuery · Palantir Foundry · Skywise · Tableau · Looker</p></div>
+            <div class="stack-group"><h3>Software delivery</h3><p>TypeScript · React · Node.js · Git · Docker · Kubernetes · Terraform · Jenkins · CI/CD</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-grid">
+        <h2 class="section-title">04 / Selected work</h2>
+        <div>
+          <h2>Applied engineering, from predictive health models to operational workflows.</h2>
+          <div class="projects">
+            <article class="project">
+              <div class="project-copy"><span class="mono">Langara College · Vietnam Gov collaboration</span><h3>Predictive Health Analytics</h3><p>Built an end-to-end machine learning pipeline for prostate and lung cancer classification, transforming raw RNA-seq data into structured features and optimizing multiple predictive models across diverse genomic profiles.</p></div>
+              <div class="project-side"><span class="techline">PYTHON / GCP / PCA / FEATURE SELECTION / CLASSIFICATION</span><strong>From raw FASTQ inputs to robust predictive models.</strong></div>
+            </article>
+            <article class="project">
+              <div class="project-copy"><span class="mono">Langara College</span><h3>Nursing Department Application</h3><p>A responsive full-stack application that replaced manual administrative processes with a centralized workflow and improved access to departmental records.</p></div>
+              <div class="project-side"><span class="techline">REACT / VITE / NODE.JS / TAILWIND</span><strong>Workflow automation with a usable, accessible interface.</strong></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-grid">
+        <h2 class="section-title">05 / Foundation</h2>
+        <div>
+          <h2>Formal training, backed by cloud and data credentials.</h2>
+          <div class="credentials">
+            <div>
+              <h3>Education</h3>
+              <div class="credential-list">
+                <div class="credential"><strong>Post-Degree Diploma, Data Analytics</strong><span>Langara College · 2025</span></div>
+                <div class="credential"><strong>Bachelor’s, Computer Science Engineering</strong><span>Vignan’s Institute of Information Technology · 2021</span></div>
+              </div>
+            </div>
+            <div>
+              <h3>Selected certifications</h3>
+              <div class="credential-list">
+                <div class="credential"><strong>AWS Certified Data Engineer — Associate</strong></div>
+                <div class="credential"><strong>AWS Certified Cloud Practitioner</strong></div>
+                <div class="credential"><strong>Big Data Spark Professional</strong><span>Infosys</span></div>
+                <div class="credential"><strong>Programming &amp; Data Structures with Python</strong><span>NPTEL</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="closing">
+      <div><div class="mono">OPEN TO CONVERSATION</div><h2>Let’s build data and machine learning systems people can rely on.</h2><p>Connect for data engineering, predictive modeling, analytics platforms, and machine learning work.</p></div>
+      <div class="contact"><span class="mono">EMAIL</span><br><a href="mailto:suresh.pedapudi1999@gmail.com">suresh.pedapudi1999@gmail.com</a></div>
+    </div>
+
+    <footer>
+      <span>© 2026 Suresh Pedapudi</span>
+      <span><a href="https://www.linkedin.com/in/sureshpedapudi?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/pedapudisuresh" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="resume.pdf" download="Suresh-Pedapudi-Resume.pdf" download>Résumé</a></span>
+    </footer>
+  </main>
+</body>
+</html>
