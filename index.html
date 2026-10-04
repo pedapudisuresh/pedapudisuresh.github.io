@@ -170,6 +170,7 @@
     .role h3 { margin: 0 0 4px; font-size: 23px; letter-spacing: -.03em; }
     .company { color: var(--accent); font-weight: 600; margin-bottom: 17px; }
     .role p { margin: 0; color: var(--muted); max-width: 760px; }
+    .role .role-designation { margin: -8px 0 14px; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--muted); }
     .outcomes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
     .outcomes span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 3px; font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--ink); }
     .practice-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
@@ -303,7 +304,7 @@
               <div class="role-date">Jan 2025 — present</div>
               <div>
                 <h3>Data Engineer</h3>
-                <div class="company">TecHands · Part-time</div>
+                <div class="company">TecHands · Full-time</div>
                 <p>Building a multi-tenant analytics platform for operational infrastructure data. Designed dimensional models across OLAP and OLTP workloads, automated event-driven ingestion on AWS, and integrated data profiling and test coverage into CI/CD.</p>
                 <div class="outcomes"><span>40% lower latency</span><span>100% data integrity</span><span>AWS · Snowflake · BigQuery</span></div>
               </div>
@@ -311,8 +312,9 @@
             <article class="role">
               <div class="role-date">Sep 2021 — Jul 2024</div>
               <div>
-                <h3>Digital Specialist Engineer</h3>
+                <h3>Data Engineer</h3>
                 <div class="company">Infosys · Airbus, France</div>
+                <p class="role-designation">Official designation: Digital Specialist Engineer</p>
                 <p>Engineered export-control data readiness systems in Palantir Skywise. Built PySpark and SQL pipelines, unified disparate sources into an ontology layer, created workflow applications, and translated cross-functional requirements into scalable solution designs.</p>
                 <div class="outcomes"><span>30% faster processing</span><span>50+ sources</span><span>15+ solution designs</span></div>
               </div>
